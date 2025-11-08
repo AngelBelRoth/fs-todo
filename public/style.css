@@ -1,0 +1,210 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Pangolin", cursive;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: url(../img/sakura.jpg) no-repeat center center/cover;
+}
+
+img {
+    width: 80%;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 0 20px;
+}
+
+.todo-app {
+    width: 100%;
+    max-width: 400px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    color: white;
+    border-radius: 20px;
+    box-shadow: 0 0 100px rgba(0, 0, 0, 0.5);
+    border: 3px solid rgba(255, 255, 255, .18);
+    backdrop-filter: blur(10px);
+}
+
+.todo-app h1 {
+    font-size: 2rem;
+}
+
+#title {
+    font-size: 8rem;
+    color: #c9adb8;
+}
+
+.todo-app p {
+    font-size: 2.3rem;
+    color: #c9adb8;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.login {
+    display: flex;
+    margin-bottom: 5%;
+
+}
+
+a.btn.btn-default {
+    margin: 1%;
+    color: #897367;
+}
+
+.input-area {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.input-area input {
+    flex: 1;
+    padding: 10px 17px;
+    font-size: 1.1rem;
+    border: none;
+    outline: none;
+    border-radius: 22px;
+    background: rgba(225, 194, 209, 0.3);
+    color: #ff6f91;
+}
+
+.input-area input::placeholder {
+    color: pink;
+}
+
+.input-area button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    margin-left: 10px;
+    border-radius: 50%;
+    color: white;
+    font-size: 1.1rem;
+    background: rgba(225, 194, 209, 0.3);
+    border: 2px solid rgba(255, 255, 255, .18);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.input-area button:hover {
+    transform: scale(1.1);
+    background: #ff6f91;
+}
+
+.todos-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#task-list {
+    width: 100%;
+}
+
+#task-list li {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background: rgba(225, 194, 209, 0.3);
+    margin-bottom: 10px;
+    padding: 8px 10px;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    position: relative;
+    transition: box-shadow 0.2s ease;
+    color: lightcoral;
+}
+
+#task-list li:hover {
+    box-shadow: 0 0 10px (0, 0, 0, 0.1);
+}
+
+#task-list li .checkbox {
+    height: 20px;
+    min-width: 20px;
+    appearance: none;
+    background: transparent;
+    border: 2px solid rgba(225, 225, 225, 0.3);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+#task-list li .checkbox:checked {
+    background-color: #ff6f91;
+    transform: scale(1.1);
+}
+
+#task-list li .checkbox:checked::before {
+    content: '\2713';
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+}
+
+#task-list li span {
+    flex: 1;
+    margin-left: 10px;
+    word-wrap: break-word;
+}
+
+#task-list li.completed span {
+    text-decoration: 2px line-through aliceblue;
+    color: aliceblue;
+}
+
+.task-buttons {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: auto;
+    gap: 10px;
+}
+
+.task-buttons button {
+    background: rgba(225, 194, 209, 0.3);
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    color: white;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.task-buttons button:hover {
+    transform: scale(1.2);
+}
+
+.task-buttons .edit-btn {
+    background: #ffbf00;
+}
+
+.task-buttons .delete-btn {
+    background: #ff6f91;
+}
