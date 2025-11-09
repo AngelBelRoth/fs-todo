@@ -1,5 +1,6 @@
 const { filter } = require("lodash");
 const { findOneAndUpdate } = require("./models/user");
+const { ObjectId } = require('mongodb');
 
 module.exports = function (app, passport, db) {
 
@@ -31,49 +32,37 @@ module.exports = function (app, passport, db) {
 
   // message board routes ===============================================================
 
-  app.post('/messages', (req, res) => {
-    db.collection('messages').save({ task: req.body.task }, (err, result) => {
-      if (err) return console.log(err)
-      console.log('saved to database')
-      res.redirect('/todolist')
-    })
-  })
-
-  // RyRy
-  // findOneAndUpdate(filter, update, options)
-  // e.g. filter = {determineWhatToUpdate: valueIWantToUpdate}
-  // e.g. update = {$set:{fieldIWantToUpdate:value}}
-
-  app.put('/:id', async (req, res) => {
-    const { todo } = req.body;
-    try {
-      const task = await db.collection('messages').findOneAndUpdate({ task: req.body.task }, 
-        { $set: {
-          task: req.body.task
-        }},{
-          sort: { _id: -1 },
-          upsert: true
-        })
-      const updateTask = await task.save();
-      res.json(updateTask);
-    } catch (err) {
-      console.log(err)
-      res.status(500).json({ message: "Server error" });
-    }
-  })
-
-  // app.put('/:id', (req, res) => {
-  //   db.collection('messages').findOneAndUpdate({ task: req.body.task }, {
-  //     $set: {
-  //       task: req.body.task
-  //     }
-  //   }, { upsert: true }, (err, result) => {
+  // app.post('/messages', (req, res) => {
+  //   db.collection('messages').save({ task: req.body.task }, (err, result) => {
   //     if (err) return console.log(err)
   //     console.log('saved to database')
-  //     console.log(result)
-  //     res.redirect('/')
+  //     res.redirect('/todolist')
   //   })
   // })
+
+
+  //findOneAndUpdate old value
+  //sucessfully findOneAndUpdate old value to new value
+  //target the ID
+  //M.Kazin
+  app.post('/messages', (req, res) => {
+    db.collection('messages')
+      .findOneAndUpdate({ _id: req.body._id }, {
+        $set: {
+          task: req.body.task
+        }
+      }, {
+        sort: { _id: -1 },
+        upsert: true
+      }, (err, result) => {
+        if (err) {
+          console.log(err)
+          res.send(err)
+          return
+        }  
+        res.redirect('/todolist')
+      })
+  })
 
 
   app.delete('/messages', (req, res) => {
