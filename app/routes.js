@@ -43,12 +43,19 @@ module.exports = function (app, passport, db) {
 
   //findOneAndUpdate old value
   //sucessfully findOneAndUpdate old value to new value
-  //target the ID
+  //set the target/filter by ID in the request body
+  //we get it from input field
+  //the _ID is coming from ATTRIBUTE -> name:""
+  //get the ID in the input field
+  //when we create a new task, it generate new auto ID
+  //from DB displaying it back to todo.ejs
   //M.Kazin
+
   app.post('/messages', (req, res) => {
     db.collection('messages')
-      .findOneAndUpdate({ _id: req.body._id }, {
-        $set: {
+      .findOneAndUpdate(
+        { _id:  new ObjectId( req.body._id || undefined )},
+        { $set: {
           task: req.body.task
         }
       }, {

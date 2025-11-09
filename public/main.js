@@ -5,6 +5,9 @@ Array.from(edit).forEach(function(element) {
       element.addEventListener('click', function(){
         const task = this.closest('li').innerText.trim()
         document.querySelector('input').value = task
+
+        const _id = this.closest('li').querySelector('span').getAttribute("name")
+        document.querySelector('#hide-task').value = _id
         // fetch('messages', {
         //   method: 'put',
         //   headers: {
@@ -18,6 +21,7 @@ Array.from(edit).forEach(function(element) {
         // })
       });
 });
+
 
 Array.from(trash).forEach(function(element) {
       element.addEventListener('click', function(){
