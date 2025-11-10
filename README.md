@@ -20,7 +20,7 @@ Add, edit, or delete your tasks — with a sakura interface.
 
 ## 🔗 Live Demo
 
-[**View App on Render**]([https://your-deployment-url.onrender.com](https://fs-todo-2sp3.onrender.com))  
+[**View App on Render**]((https://fs-todo-2sp3.onrender.com))  
 
 ## 🛠️ Tech Stack
 
@@ -29,11 +29,8 @@ Add, edit, or delete your tasks — with a sakura interface.
 - **Deployment:** Render  
 - **Version Control:** Git & GitHub  
 
-## 🚀 Getting Started
-
-### Prerequisites
-- Node.js (v14+)
-- npm (comes with Node.js)
+<img width="1600" height="755" alt="Screenshot 2025-11-09 at 20 20 19" src="https://github.com/user-attachments/assets/57b29c4d-25af-4e0b-9711-78af612ea0be" />
+<img width="1600" height="755" alt="Screenshot 2025-11-09 at 20 23 15" src="https://github.com/user-attachments/assets/0377c536-55bd-4b7c-a43d-128e1dd757be" />
 
 ### Installation
 
@@ -48,5 +45,3 @@ npm install
 # Run the app
 npm start
 
-<img width="1600" height="755" alt="Screenshot 2025-11-09 at 20 20 19" src="https://github.com/user-attachments/assets/57b29c4d-25af-4e0b-9711-78af612ea0be" />
-<img width="1600" height="755" alt="Screenshot 2025-11-09 at 20 23 15" src="https://github.com/user-attachments/assets/0377c536-55bd-4b7c-a43d-128e1dd757be" />
